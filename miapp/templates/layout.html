@@ -1,0 +1,56 @@
+<!--Cargar carpetas STATIC-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+        | OAMA
+    </title>
+</head>
+<body>
+    <!---Cabecera de la página-->
+    <header>
+        <div id="logotipo">
+            <!-- Logo de Django -->
+            <img src="{% static 'img/logo.png' %}" alt="">
+            <h1>Sitio Web con Django</h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/inicio">Inicio</a></li>
+            <li><a href="/hola-django/">Hola Django</a></li>
+            <li><a href="/pagina-pruebas/">Pagina de pruebas</a></li>
+            <li><a href="/contacto/">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+
+    <div id="content">
+        <div class="box">
+            {% block content %}
+             <!--Codigo que viene de templates-->
+             <strong>Contenido del bloque original !!!</strong>
+            {% endblock %}
+        </div>
+    </div>
+
+    <footer>
+        python - Django &copy; | OAMA
+    </footer>
+
+    
+</body>
+</html>

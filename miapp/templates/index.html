@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+
+    <!-- Esto es un comentario -->
+    {% comment 'Esto es un comentario' %}
+        <h1>hola hola hola</h1>
+    {% endcomment %}
+
+    <h1 class="title">{{title}} | OAMA</h1>
+
+    {{mi_variable}}
+
+    {% if nombre and nombre == 'Oscar Alejandro Meza Avendaño' %}
+        <p> {{nombre}} </p>
+    {% else %}
+        <strong>El nombre no existe o no coincide</strong>
+    {% endif %}
+
+    <h3>Listado de lenguajes de programación</h3>
+    <ul>
+        {% for lenguaje in lenguajes %}
+            <li>{{lenguaje}}</li>
+        {% endfor %}
+    </ul>
+
+    {{lenguajes}}
+
+    <h3>Años hasta el 2050</h3>
+{% endblock %}
